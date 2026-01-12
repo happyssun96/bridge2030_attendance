@@ -464,10 +464,10 @@
 
             if (code) {
                 const result = code.data;
-                // QR 코드에서 고유번호 추출 (마지막 3자리)
-                const match = result.match(/(\d{3})$/);
+                // QR 코드에서 고유번호 추출 (마지막 4자리)
+                const match = result.match(/(\d{4})$/);
                 if (match) {
-                    document.getElementById('attendanceId').value = match[1];
+                    document.getElementById('phoneNumber').value = match[1];
                     submitAttendance();
                     return;
                 }
@@ -492,7 +492,7 @@
         async function submitAttendance() {
             const phoneNumber = document.getElementById('phoneNumber').value.trim();
 
-            if (!attendanceId) {
+            if (!phoneNumber) {
                 showMessage('고유번호를 입력해주세요', 'error');
                 return;
             }
@@ -513,7 +513,7 @@
 
                 if (result.success) {
                     showMessage('✅ ' + result.message, 'success');
-                    document.getElementById('attendanceId').value = '';
+                    document.getElementById('phoneNumber').value = '';
                     setTimeout(() => {
                         refreshDashboard();
                     }, 500);
