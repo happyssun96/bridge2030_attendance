@@ -372,7 +372,7 @@
                     <div class="manual-input">
                         <p style="color: #6c757d; margin-bottom: 15px; font-size: 14px;">고유번호를 입력해주세요</p>
                         <div class="input-group">
-                            <input type="text" id="attendanceId" placeholder="예: 001, 002" maxlength="3">
+                            <input type="text" id="phoneNumber" placeholder="예: 12345678" maxlength="8">
                             <button class="btn btn-primary" onclick="submitAttendance()">제출</button>
                         </div>
                     </div>
@@ -490,7 +490,7 @@
 
         // 출석 제출
         async function submitAttendance() {
-            const attendanceId = document.getElementById('attendanceId').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
 
             if (!attendanceId) {
                 showMessage('고유번호를 입력해주세요', 'error');
@@ -506,7 +506,7 @@
                 const response = await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ attendanceId: attendanceId })
+                    body: JSON.stringify({ phoneNumber: phoneNumber })
                 });
 
                 const result = await response.json();
@@ -581,7 +581,7 @@
 
         // Enter 키로 제출
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('attendanceId').addEventListener('keypress', (e) => {
+            document.getElementById('phoneNumber').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     submitAttendance();
                 }
