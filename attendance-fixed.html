@@ -408,11 +408,11 @@
                 body: formData
             })
             .then(response => {
-                console.log('응답 상태:', response.status);
+                //console.log('응답 상태:', response.status);
                 return response.text();
             })
             .then(text => {
-                console.log('응답 텍스트:', text);
+                //console.log('응답 텍스트:', text);
                 try {
                     const data = JSON.parse(text);
                     if (data.success) {
@@ -421,7 +421,7 @@
                         showMessage('❌ ' + data.message, 'error');
                     }
                 } catch (e) {
-                    console.log('JSON 파싱 오류:', e);
+                    //console.log('JSON 파싱 오류:', e);
                     showMessage('✅ 출석이 확인되었습니다!', 'success');
                 }
                 document.getElementById('phoneNumber').value = '';
@@ -430,7 +430,7 @@
                 }, 800);
             })
             .catch(error => {
-                console.log('네트워크 오류:', error);
+                //console.log('네트워크 오류:', error);
                 // CORS 오류 무시 - 백엔드에서는 실행됨
                 showMessage('✅ 출석이 확인되었습니다!', 'success');
                 document.getElementById('phoneNumber').value = '';
@@ -489,7 +489,7 @@
                     }
                 })
                 .catch(error => {
-                    console.log('Dashboard 업데이트 오류:', error);
+                    //console.log('Dashboard 업데이트 오류:', error);
                 });
         }
 
