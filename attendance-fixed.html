@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>불꽃교회 BRIDGE 청년부 출석 체크 시스템</title>
+    <title>불꽃교회 BRIDGE 청년부 출석체크 시스템</title>
     <style>
         * {
             margin: 0;
@@ -307,14 +307,14 @@
         <div class="header">
             <h1>
                 <img src="브릿지로고(현수막용).png" alt="아이콘" style="width:40px; height:40px; vertical-align:middle; margin-bottom:5px;">
-                출석 체크
+                출석체크☑️
             </h1>
             <p>불꽃교회 BRIDGE 청년부</p>
         </div>
 
         <div class="content">
             <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab(0)">QR 스캔</button>
+                <button class="tab-btn active" onclick="switchTab(0)">예배에 오신 분들을 환영합니다🙌</button>
                 <!-- <button class="tab-btn" onclick="switchTab(1)">실시간 현황</button> -->
             </div>
 
@@ -323,7 +323,8 @@
                     <div id="message" class="message"></div>
 
                     <div class="manual-input">
-                        <p style="color: #6c757d; margin-bottom: 15px; font-size: 14px;">휴대폰 뒷8자리를 입력해주세요</p>
+                        <p style="color: #6c757d; font-size: 14px;">휴대폰 뒷8자리를 입력해주세요</p>
+                        <p style="color: #6c757d; margin-bottom: 15px; font-size: 14px;">* 출석체크 외 다른 용도로 사용하지 않습니다.</p>
                         <div class="input-group">
                             <input type="text" id="phoneNumber" placeholder="예: 12345678" maxlength="8" inputmode="numeric">
                             <button class="btn btn-primary" id="submitBtn" onclick="submitAttendance()">제출</button>
